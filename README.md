@@ -20,7 +20,8 @@ To run this test we need:
 2. `yarn type-check`: this will run the TypeScript compilation check
 3. `yarn generate`: this will run the code generation for the GraphQL schema types
 4. `yarn fix`: this will run `prettier` and `eslint`, which should run without any warnings
-5. `yarn dev`: this will run the API in <http://localhost:4002> (or a different port if it has been changed in the `.env` file).
+5. `yarn test`: this will run the test suite (`jest`)
+6. `yarn dev`: this will run the API in <http://localhost:4002> (or a different port if it has been changed in the `.env` file).
 
 ### Checking the GraphQL connection
 
