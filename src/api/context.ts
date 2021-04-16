@@ -4,10 +4,12 @@ import { makeUUID } from "@utils/make-uuid";
 import Chance from "chance";
 
 export async function buildContext(session: ExpressContext): Promise<Context> {
+  const chance = new Chance();
   return {
     ...session,
     makeUUID,
     idFor,
-    chance: new Chance(),
+    chance,
+    makeFakeSentence: () => chance.sentence(),
   };
 }

@@ -14,11 +14,12 @@ import MockRes from "mock-res";
 type MockContextParams = Partial<CustomContext>;
 
 function mockCustomContext(params: MockContextParams): CustomContext {
+  const chance = params.chance ?? new Chance();
   return {
-    makeUUID,
-    idFor,
-    chance: new Chance(),
-    ...params,
+    chance,
+    makeUUID: params.makeUUID ?? makeUUID,
+    idFor: params.idFor ?? idFor,
+    makeFakeSentence: params.makeFakeSentence ?? (() => chance.sentence()),
   };
 }
 

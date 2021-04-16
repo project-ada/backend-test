@@ -25,6 +25,7 @@ export type CustomContext = {
   makeUUID: MakeUUIDFunction;
   idFor: IdForFn;
   chance: Chance.Chance;
+  makeFakeSentence: () => string;
 };
 
 export type Context = ExpressContext & CustomContext;
