@@ -4,7 +4,7 @@
 
 extend type Query {
   """
-  return an array of messages with the given (TO BE IMPLEMENTED)
+  WARM-UP TEST: returns an array of sentences of the given quantity (TO BE IMPLEMENTED)
   """
   messageList(quantity: Int!): [String!]!
 }
