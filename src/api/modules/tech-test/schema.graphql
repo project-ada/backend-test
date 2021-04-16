@@ -1,0 +1,10 @@
+########################
+# ADD YOUR SCHEMA HERE #
+########################
+
+extend type Query {
+  """
+  return an array of messages with the given (TO BE IMPLEMENTED)
+  """
+  messageList(quantity: Int!): [String!]!
+}

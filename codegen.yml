@@ -1,0 +1,32 @@
+overwrite: true
+generates:
+  # Composed Schema
+  src/__generated__/schema.graphql:
+    schema:
+      - "src/api/modules/**/*.graphql"
+    plugins:
+      - "schema-ast"
+    config:
+      includeDirectives: true
+
+  # Own Types
+  src/__generated__/schema-types.ts:
+    schema:
+      - "src/api/modules/**/*.graphql"
+    plugins:
+      - add:
+          content: "/* eslint-disable import/no-duplicates, @typescript-eslint/ban-types */"
+      - "typescript"
+      - "typescript-resolvers"
+      - "typescript-operations"
+    config:
+      skipTypename: true
+      contextType: "@api/server-types#Context"
+      scalars:
+        FloatRounded1: number
+        FloatRounded2: number
+        JSDate: "@plandek-utils/ts-parse-dayjs#Dayjs"
+        KeyString: string
+        UTCDate: "@plandek-utils/ts-parse-dayjs#Dayjs"
+        UTCEndOfDay: "@plandek-utils/ts-parse-dayjs#Dayjs"
+        UTCStartOfDay: "@plandek-utils/ts-parse-dayjs#Dayjs"

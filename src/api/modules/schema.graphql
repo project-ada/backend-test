@@ -1,0 +1,48 @@
+type Query {
+  """
+  returns ok
+  """
+  ping: String!
+
+  """
+  returns current time
+  """
+  now: UTCDate!
+}
+
+type Mutation {
+  """
+  returns the given value
+  """
+  mutantPing(value: String!): String!
+}
+
+"""
+float rounded to 1 decimal place
+"""
+scalar FloatRounded1
+
+"""
+float rounded to 2 decimal places
+"""
+scalar FloatRounded2
+
+"""
+Date in UTC
+"""
+scalar UTCDate
+
+"""
+Date in UTC, expected to be used as a js Date in the UI (as normal Dayjs in the server)
+"""
+scalar JSDate
+
+"""
+Date in UTC that when parsing, if it does not have time already, it will be parsed at start of UTC day
+"""
+scalar UTCStartOfDay
+
+"""
+Date in UTC that when parsing, if it does not have time already, it will be parsed at end of UTC day
+"""
+scalar UTCEndOfDay
