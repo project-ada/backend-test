@@ -37,6 +37,6 @@ and check that everything goes ok.
 
 ## Warm-up exercise
 
-Complete the resolver in `src/api/modules/tech-test/resolvers.ts`.
+Complete the resolver in `src/api/modules/tech-test/resolvers.ts`. The schema is in `src/api/modules/tech-test/schema.graphql`, which describes what the query should return.
 
 You can also add tests in `src/api/modules/tech-test/__tests__/tech-test.spec.ts`. Have a look at the example test in `src/api/modules/__tests__/base.spec.ts` for something to base your tests on.
