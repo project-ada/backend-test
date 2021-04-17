@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { buildIncidentsAPIFor, RawIncident } from "@api/incidents-api";
 import { schema } from "@api/schema";
 import { Context, CustomContext } from "@api/server-types";
 import { idFor } from "@utils/id-for";
@@ -11,7 +12,7 @@ import MockReq from "mock-req";
 // @ts-ignore
 import MockRes from "mock-res";
 
-type MockContextParams = Partial<CustomContext>;
+type MockContextParams = Partial<CustomContext> & { incidentsRawData?: RawIncident[] };
 
 function mockCustomContext(params: MockContextParams): CustomContext {
   const chance = params.chance ?? new Chance();
@@ -19,6 +20,7 @@ function mockCustomContext(params: MockContextParams): CustomContext {
     chance,
     makeUUID: params.makeUUID ?? makeUUID,
     idFor: params.idFor ?? idFor,
+    incidentsAPI: params.incidentsAPI ?? buildIncidentsAPIFor(params.incidentsRawData ?? []),
     makeFakeSentence: params.makeFakeSentence ?? (() => chance.sentence()),
   };
 }

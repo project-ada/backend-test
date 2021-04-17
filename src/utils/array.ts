@@ -1,7 +1,20 @@
-import { every, isArray, isUndefined, List, ListIterateeCustom, ListIterator, some, without } from "lodash";
+import { every, isArray, isUndefined, List, ListIterateeCustom, ListIterator, sample, some, without } from "lodash";
 
 export const anyOf = some;
 export const allOf = every;
+
+export function pickRandom<T>(collection: List<T>): T {
+  if (!collection.length) {
+    throw "Cannot be a blank collection";
+  }
+
+  const x = sample(collection);
+  if (isUndefined(x)) {
+    throw "Cannot be a blank collection";
+  }
+
+  return x;
+}
 
 export function noneOf<T>(collection: List<T> | null | undefined, predicate?: ListIterateeCustom<T, boolean>): boolean {
   return !anyOf(collection, predicate);

@@ -16,6 +16,7 @@
     "fix:prettier": "prettier \"src/**/*.{js,jsx,ts,tsx,graphql}\" --write",
     "fix:lint": "yarn run lint --fix",
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "new-data": "NODE_ENV=development ts-node-dev -r tsconfig-paths/register ./src/data/generator.ts",
     "dev": "NODE_ENV=development ts-node-dev --poll --interval 1000 --no-notify --respawn  -r tsconfig-paths/register ./src",
     "debug": "DEBUG=* yarn dev",
     "watch": "run-p -c type-check:watch generate:watch dev",

@@ -1,3 +1,4 @@
+import { IncidentsAPI } from "@api/incidents-api";
 import { IdForFn } from "@utils/id-for";
 import { MakeUUIDFunction } from "@utils/make-uuid";
 import { ExpressContext } from "apollo-server-express/dist/ApolloServer";
@@ -26,6 +27,7 @@ export type CustomContext = {
   idFor: IdForFn;
   chance: Chance.Chance;
   makeFakeSentence: () => string;
+  incidentsAPI: IncidentsAPI;
 };
 
 export type Context = ExpressContext & CustomContext;

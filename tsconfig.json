@@ -17,6 +17,7 @@
     "paths": {
       "__mocks__/*": ["./__mocks__/*"],
       "@api/*": ["./api/*"],
+      "@data/*": ["./data/*"],
       "@utils/*": ["./utils/*"],
       "@generated-types/*": ["./__generated__/*"]
     },

@@ -1,6 +1,9 @@
+import { Dayjs } from "@plandek-utils/ts-parse-dayjs";
 import { isArray, isFunction, isObject } from "lodash";
 
 export type SortDirections = "asc" | "desc";
+
+export type TimePoint = { from: Dayjs; to: Dayjs };
 
 export type PlainObjectValue =
   | undefined

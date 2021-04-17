@@ -1,0 +1,17 @@
+[
+  { "id": 1, "model": "Herrera Outlaw GTS", "type": "Hypercar", "colour": "red" },
+  { "id": 2, "model": "Herrera Outlaw GTS", "type": "Hypercar", "colour": "black" },
+  { "id": 3, "model": "Rayfield Excalibur", "type": "Hypercar", "colour": "silver" },
+  { "id": 4, "model": "Mizutani Shion MZ2", "type": "Sports", "colour": "yellow" },
+  { "id": 5, "model": "Mizutani Shion MZ2", "type": "Sports", "colour": "black" },
+  { "id": 6, "model": "Quadra Turbo-R 740", "type": "Sports", "colour": "black" },
+  { "id": 7, "model": "Quadra Turbo-R 740", "type": "Sports", "colour": "red" },
+  { "id": 8, "model": "Villefort Cortes V5000", "type": "Executive", "colour": "red" },
+  { "id": 9, "model": "Villefort Cortes V5000", "type": "Executive", "colour": "black" },
+  { "id": 10, "model": "Villefort Cortes V5000", "type": "Executive", "colour": "blue" },
+  { "id": 11, "model": "Chevillon Thrax 388", "type": "Executive", "colour": "silver" },
+  { "id": 12, "model": "Archer Hella EC-D", "type": "Economy", "colour": "black" },
+  { "id": 13, "model": "Archer Hella EC-D", "type": "Economy", "colour": "blue" },
+  { "id": 14, "model": "Thorton Colby CX410", "type": "Economy", "colour": "red" },
+  { "id": 14, "model": "Thorton Colby CX410", "type": "Economy", "colour": "black" }
+]
