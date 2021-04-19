@@ -1,4 +1,6 @@
+import { buildCarsAPIFor } from "@api/cars-api";
 import { Context, ExpressContext } from "@api/server-types";
+import RAW_CARS from "@data/cars.json";
 import RAW_INCIDENTS from "@data/incidents.json";
 import { idFor } from "@utils/id-for";
 import { makeUUID } from "@utils/make-uuid";
@@ -12,6 +14,7 @@ export async function buildContext(session: ExpressContext): Promise<Context> {
     makeUUID,
     idFor,
     chance,
+    carsAPI: buildCarsAPIFor(RAW_CARS),
     incidentsAPI: buildIncidentsAPIFor(RAW_INCIDENTS),
     makeFakeSentence: () => chance.sentence(),
   };

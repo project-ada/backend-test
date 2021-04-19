@@ -1,3 +1,4 @@
+import { CarsAPI } from "@api/cars-api";
 import { IncidentsAPI } from "@api/incidents-api";
 import { IdForFn } from "@utils/id-for";
 import { MakeUUIDFunction } from "@utils/make-uuid";
@@ -27,6 +28,7 @@ export type CustomContext = {
   idFor: IdForFn;
   chance: Chance.Chance;
   makeFakeSentence: () => string;
+  carsAPI: CarsAPI;
   incidentsAPI: IncidentsAPI;
 };
 
