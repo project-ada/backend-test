@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { buildCarsAPIFor, Car } from "@api/cars-api";
-import { buildIncidentsAPIFor, RawIncident } from "@api/incidents-api";
+import { buildCarsAPIFor } from "@api/cars-api";
+import { buildIncidentsAPIFor, rawIncidentFrom } from "@api/incidents-api";
 import { schema } from "@api/schema";
 import { Context, CustomContext } from "@api/server-types";
+import RAW_CARS from "@data/cars.json";
+import RAW_INCIDENTS from "@data/incidents.json";
+import { Car, Incident } from "@generated-types/schema-types";
 import { idFor } from "@utils/id-for";
 import { makeUUID } from "@utils/make-uuid";
 import { ApolloServer } from "apollo-server";
@@ -13,7 +16,7 @@ import MockReq from "mock-req";
 // @ts-ignore
 import MockRes from "mock-res";
 
-type MockContextParams = Partial<CustomContext> & { incidentsRawData?: RawIncident[]; carsRawData?: Car[] };
+type MockContextParams = Partial<CustomContext> & { incidents?: Incident[]; cars?: Car[] };
 
 function mockCustomContext(params: MockContextParams): CustomContext {
   const chance = params.chance ?? new Chance();
@@ -21,8 +24,8 @@ function mockCustomContext(params: MockContextParams): CustomContext {
     chance,
     makeUUID: params.makeUUID ?? makeUUID,
     idFor: params.idFor ?? idFor,
-    carsAPI: params.carsAPI ?? buildCarsAPIFor(params.carsRawData ?? []),
-    incidentsAPI: params.incidentsAPI ?? buildIncidentsAPIFor(params.incidentsRawData ?? []),
+    carsAPI: params.carsAPI ?? buildCarsAPIFor(params.cars ?? RAW_CARS),
+    incidentsAPI: params.incidentsAPI ?? buildIncidentsAPIFor(params.incidents?.map(rawIncidentFrom) ?? RAW_INCIDENTS),
     makeFakeSentence: params.makeFakeSentence ?? (() => chance.sentence()),
   };
 }

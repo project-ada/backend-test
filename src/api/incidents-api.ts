@@ -1,8 +1,12 @@
+import { Incident } from "@generated-types/schema-types";
 import { safeCompact } from "@plandek-utils/safe-compact";
 import { Dayjs, parseDayjsOrError } from "@plandek-utils/ts-parse-dayjs";
 
-export type RawIncident = { id: number; carID: number; severity: number; date: string | Dayjs };
-export type Incident = { id: number; carID: number; severity: number; date: Dayjs };
+export type RawIncident = Omit<Incident, "date"> & { date: string | Dayjs };
+
+export function rawIncidentFrom(x: Incident): RawIncident {
+  return { ...x, date: x.date.toISOString() };
+}
 
 export interface IncidentsAPI {
   loadIncidents(): Promise<Incident[]>;

@@ -1,5 +1,5 @@
+import { Car } from "@generated-types/schema-types";
 import { cloneDeep } from "lodash";
-export type Car = { id: number; model: string; type: string; colour: string };
 
 export interface CarsAPI {
   loadCars(): Promise<Car[]>;

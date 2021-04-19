@@ -1,0 +1,25 @@
+extend type Query {
+  """
+  Returns all the cars in the system
+  """
+  cars: [Car!]!
+
+  """
+  Returns all the incidents in the system
+  """
+  incidents: [Incident!]!
+}
+
+type Car {
+  id: ID!
+  model: String!
+  type: String!
+  colour: String!
+}
+
+type Incident {
+  id: ID!
+  carID: String!
+  severity: Int!
+  date: UTCDate!
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Backend Test API",
+  "includes": [
+    "./src/api/modules/**/*"
+  ]
+}

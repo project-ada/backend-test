@@ -1,4 +1,5 @@
 import BaseModule from "./base";
+import EntitiesModule from "./entities";
 import TechTestModule from "./tech-test";
 
-export default [BaseModule, TechTestModule];
+export default [BaseModule, EntitiesModule, TechTestModule];
