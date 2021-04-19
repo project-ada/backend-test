@@ -2,13 +2,6 @@
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { loadTypedefsSync } from "@graphql-tools/load";
 import { colorPrettyJSON } from "@utils/pretty-json";
-import { join } from "path";
-
-export function makeLoadGQL(dirname: string) {
-  return function loadGQL(relativeFilePath: string) {
-    return loadTypeDefs(join(dirname, relativeFilePath));
-  };
-}
 
 export function loadTypeDefs(filePath: string) {
   const list = loadTypedefsSync(filePath, {

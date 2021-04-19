@@ -1,4 +1,4 @@
-import { safeFloat, safeFloats } from "@utils/safe-float";
+import { safeFloat } from "@utils/safe-float";
 import "reflect-metadata";
 
 describe("safeFloat()", () => {
@@ -53,15 +53,5 @@ describe("safeFloat()", () => {
     const d2 = new Date("2018-01-01");
     expect(safeFloat(d1)).toEqual(0);
     expect(safeFloat(d2)).toEqual(0);
-  });
-});
-
-describe("safeFloats()", () => {
-  it("with an array -> maps safeFloat() to each element", () => {
-    expect(safeFloats(["1", 2, " 3.4  ", "whatever"])).toEqual([1, 2, 3.4, 0]);
-  });
-
-  it("with a non-array arg -> returns an array with safeFloat(arg)", () => {
-    expect(safeFloats("123")).toEqual([123]);
   });
 });

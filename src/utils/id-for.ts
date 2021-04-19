@@ -10,6 +10,8 @@ export const idFor: IdForFn = (prefix, input) => {
   return `${prefix}--${hash}`;
 };
 
+// internal utils for implementation
+
 function sortedJSONFor(input: Record<string, unknown>): string {
   return JSON.stringify(sortKeys(input, { deep: true }));
 }

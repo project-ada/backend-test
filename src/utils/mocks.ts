@@ -16,6 +16,8 @@ import MockReq from "mock-req";
 // @ts-ignore
 import MockRes from "mock-res";
 
+// MOCK UTILS FOR TESTS
+
 type MockContextParams = Partial<CustomContext> & { incidents?: Incident[]; cars?: Car[] };
 
 function mockCustomContext(params: MockContextParams): CustomContext {

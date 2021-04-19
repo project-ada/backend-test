@@ -1,7 +1,6 @@
 import { Incident } from "@generated-types/schema-types";
 import { parseDayjsOrError } from "@plandek-utils/ts-parse-dayjs";
-import { pickRandom } from "@utils/array";
-import { timePointsFor } from "@utils/time-points-for";
+import { pickRandom } from "@utils/pick-random";
 import * as fs from "fs";
 import path from "path";
 import CARS from "./cars.json";
@@ -10,11 +9,29 @@ const SEVERITIES = [1, 2, 3, 4, 5];
 
 const CAR_IDS = CARS.map((x) => x.id);
 
-const startDate = parseDayjsOrError("2020-06-01"); // June 1st 2020, Monday
-const endDate = parseDayjsOrError("2020-06-21"); // June 21st 2020, Sunday
-
-const timePoints = timePointsFor({ startDate, endDate, granularity: "day" });
-const DATES = timePoints.map((x) => x.from);
+const DATES = [
+  "2020-06-01", // June 1st 2020, Monday
+  "2020-06-02",
+  "2020-06-03",
+  "2020-06-04",
+  "2020-06-05",
+  "2020-06-06",
+  "2020-06-07",
+  "2020-06-08",
+  "2020-06-09",
+  "2020-06-10",
+  "2020-06-11",
+  "2020-06-12",
+  "2020-06-13",
+  "2020-06-14",
+  "2020-06-15",
+  "2020-06-16",
+  "2020-06-17",
+  "2020-06-18",
+  "2020-06-19",
+  "2020-06-20",
+  "2020-06-21", // June 21st 2020, Sunday
+].map((x) => parseDayjsOrError(x));
 
 const incidents: Incident[] = [];
 
