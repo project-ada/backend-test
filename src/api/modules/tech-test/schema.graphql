@@ -1,10 +1,23 @@
-########################
-# ADD YOUR SCHEMA HERE #
-########################
+################################
+# ADD YOUR SCHEMA IN THIS FILE #
+################################
 
 extend type Query {
+  ####################
+  # WARM-UP EXERCISE #
+  ####################
+
   """
   WARM-UP TEST: returns an array of random sentences of the given quantity (TO BE IMPLEMENTED)
   """
   messageList(quantity: Int!): [String!]!
+
+  ################################################################################################
+  #                                                                                              #
+  # EXERCISE 1: METRIC                                                                           #
+  #                                                                                              #
+  # Create a query endpoint metric that returns an object with an `id` and the `averageSeverity` #
+  # of the Incidents loaded via the `context.incidentsAPI`                                       #
+  #                                                                                              #
+  ################################################################################################
 }

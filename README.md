@@ -37,10 +37,17 @@ and check that everything goes ok.
 
 ## Warm-up exercise
 
-Complete the resolver in `src/api/modules/tech-test/resolvers.ts`. The schema is in `src/api/modules/tech-test/schema.graphql`, which describes what the query should return.
+Complete the resolver for `messageList` query in `src/api/modules/tech-test/resolvers.ts`. The schema is in `src/api/modules/tech-test/schema.graphql`, which describes what the query should return.
 
-You can also add tests in `src/api/modules/tech-test/__tests__/tech-test.spec.ts`. Have a look at the following example tests for something to base your tests on:
+The tests in `src/api/modules/tech-test/__tests__/warmup-exercise.spec.ts` will guide you to the resolution. 
 
-- `src/api/modules/__tests__/base.spec.ts`
-- `src/api/modules/entities/__tests__/cars.spec.ts` 
-- `src/api/modules/entities/__tests__/incidents.spec.ts` 
+## Exercise 1
+
+Read the exercise described in `src/api/modules/tech-test/schema.graphql`. Design the GraphQL query, types and inputs needed if any. Then implement the resolver in `src/api/modules/tech-test/resolvers.ts`.
+
+The tests in `src/api/modules/tech-test/__tests__/exercise.spec.ts` will guide you to the resolution. 
+
+## Exercise 2
+
+Once the warmup exercise and the main exercise are completed and discussed with the interviewers, please ask about the second exercise, which will consist on a live-coding extension of Exercise 1.
+
